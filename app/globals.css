@@ -48,16 +48,16 @@ body * {
   }
 
   .cursor--link-hovered {
-    transform: translate(-50%, -50%) scale(1.25);
-    background-color: #fefefe;
+    transform: translate(-50%, -50%) scale(1.5);
   }
 
   .cursor--div-hovered {
-    border: 2px solid yellow;
+    border: 2px solid hotpink;
   }
 
   .cursor--clicked {
     transform: translate(-50%, -50%) scale(0.9);
-    background-color: #fefefe;
+    background-color: hotpink;
+    border: none;
   }
 }
