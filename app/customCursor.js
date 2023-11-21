@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+
+import { useState, useEffect, useCallback } from "react";
 
 const isMobile = () => {
   const ua = navigator.userAgent;
@@ -92,7 +93,7 @@ export default function Cursor() {
         pinkDiv.removeEventListener("mouseout", () => setDivHovered(false));
       }
     };
-  }, []);
+  });
 
   const cursorClasses = `cursor ${clicked ? "cursor--clicked" : ""} ${
     hidden ? "cursor--hidden" : ""

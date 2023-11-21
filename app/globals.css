@@ -6,7 +6,6 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --cursor-color: yellow;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,8 +38,8 @@ body * {
     pointer-events: none;
     transition: all 150ms ease;
     transition-property: background-color, opacity, transform, mix-blend-mode;
-    z-index: 9999;
-    mix-blend-mode: lighten;
+    z-index: 9999 !important;
+    mix-blend-mode: normal;
   }
 
   .cursor--hidden {
@@ -49,10 +48,11 @@ body * {
 
   .cursor--link-hovered {
     transform: translate(-50%, -50%) scale(1.5);
+    z-index: 9999;
   }
 
   .cursor--div-hovered {
-    border: 2px solid hotpink;
+    border: 3px solid black;
   }
 
   .cursor--clicked {
