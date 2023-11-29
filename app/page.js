@@ -4,16 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
-  const [cursorColor, setCursorColor] = useState(null);
-
-  const handleCursorEnter = () => {
-    setCursorColor("red"); // Change cursor color on link hover
-  };
-
-  const handleCursorLeave = () => {
-    setCursorColor("white"); // Reset cursor color on leaving link
-  };
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -42,8 +32,12 @@ export default function Home() {
       </div>
       return (
       <main className="grid grid-cols-2 gap-6 min-h-screen  items-center justify-center p-24">
-        <div className="h-96 w-96 bg-yellow-600 flex justify-center items-center"></div>
-        <div id="pinkDiv" className="h-96 w-96 bg-slate-600 z-10">
+        <div
+          id="portfolio"
+          className="h-96 w-96 bg-sb-yellow flex justify-center items-center"
+        ></div>
+        <div id="journal" className="h-96 w-96 bg-sb-blue z-10">
+          <div>DESTINATION GYM</div>
           <Image src="/Property 1=Book An Appointment.png" alt="image" width={200} height={200} />
         </div>
       </main>

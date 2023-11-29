@@ -75,11 +75,11 @@ export default function Cursor() {
 
   useEffect(() => {
     const handleDivHoverEvents = () => {
-      const pinkDiv = document.getElementById("pinkDiv");
-      console.log(pinkDiv);
-      if (pinkDiv) {
-        pinkDiv.addEventListener("mouseover", () => setDivHovered(true));
-        pinkDiv.addEventListener("mouseout", () => setDivHovered(false));
+      const journal = document.getElementById("journal");
+      console.log(journal);
+      if (journal) {
+        journal.addEventListener("mouseover", () => setDivHovered(true));
+        journal.addEventListener("mouseout", () => setDivHovered(false));
       }
     };
 
@@ -87,17 +87,17 @@ export default function Cursor() {
     console.log(divHovered);
     return () => {
       // Clean up: Remove event listeners on unmount
-      const pinkDiv = document.getElementById("PinkDiv");
-      if (pinkDiv) {
-        pinkDiv.removeEventListener("mouseover", () => setDivHovered(true));
-        pinkDiv.removeEventListener("mouseout", () => setDivHovered(false));
+      const journal = document.getElementById("journal");
+      if (journal) {
+        journal.removeEventListener("mouseover", () => setDivHovered(true));
+        journal.removeEventListener("mouseout", () => setDivHovered(false));
       }
     };
   });
 
   const cursorClasses = `cursor ${clicked ? "cursor--clicked" : ""} ${
     hidden ? "cursor--hidden" : ""
-  } ${linkHovered ? "cursor--link-hovered" : ""} ${divHovered ? "cursor--div-hovered" : ""}`;
+  } ${linkHovered ? "cursor--link-hovered" : ""} ${divHovered ? "cursor--journal-hovered" : ""}`;
 
   return (
     <div className={cursorClasses} style={{ left: `${position.x}px`, top: `${position.y}px` }} />
