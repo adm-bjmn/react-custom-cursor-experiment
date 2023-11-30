@@ -11,7 +11,6 @@ export default function Cursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [clicked, setClicked] = useState(false);
   const [linkHovered, setLinkHovered] = useState(false);
-  const [divHovered, setDivHovered] = useState(false);
   const [hidden, setHidden] = useState(false);
 
   const addEventListeners = useCallback(() => {
@@ -73,31 +72,118 @@ export default function Cursor() {
     };
   }, []);
 
+  const [socialHovered, setSocialHovered] = useState(false);
   useEffect(() => {
     const handleDivHoverEvents = () => {
-      const journal = document.getElementById("journal");
-      console.log(journal);
-      if (journal) {
-        journal.addEventListener("mouseover", () => setDivHovered(true));
-        journal.addEventListener("mouseout", () => setDivHovered(false));
+      const socialLink = document.getElementById("social-link");
+      if (socialLink) {
+        socialLink.addEventListener("mouseover", () => setSocialHovered(true));
+        socialLink.addEventListener("mouseout", () => setSocialHovered(false));
       }
     };
 
     handleDivHoverEvents(); // Add event listeners on mount
-    console.log(divHovered);
     return () => {
       // Clean up: Remove event listeners on unmount
-      const journal = document.getElementById("journal");
+      const socialLink = document.getElementById("social-link");
+      if (socialLink) {
+        socialLink.removeEventListener("mouseover", () => setSocialHovered(true));
+        socialLink.removeEventListener("mouseout", () => setSocialHovered(false));
+      }
+    };
+  });
+
+  const [emailHovered, setEmailHovered] = useState(false);
+  useEffect(() => {
+    const handleDivHoverEvents = () => {
+      const emailLink = document.getElementById("email-button");
+      if (emailLink) {
+        emailLink.addEventListener("mouseover", () => setEmailHovered(true));
+        emailLink.addEventListener("mouseout", () => setEmailHovered(false));
+      }
+    };
+
+    handleDivHoverEvents(); // Add event listeners on mount
+    return () => {
+      // Clean up: Remove event listeners on unmount
+      const emailLink = document.getElementById("email-button");
+      if (emailLink) {
+        emailLink.removeEventListener("mouseover", () => setEmailHovered(true));
+        emailLink.removeEventListener("mouseout", () => setEmailHovered(false));
+      }
+    };
+  });
+
+  const [phoneHovered, setPhoneHovered] = useState(false);
+  useEffect(() => {
+    const handleDivHoverEvents = () => {
+      const phoneLink = document.getElementById("phone-button");
+      if (phoneLink) {
+        phoneLink.addEventListener("mouseover", () => setPhoneHovered(true));
+        phoneLink.addEventListener("mouseout", () => setPhoneHovered(false));
+      }
+    };
+
+    handleDivHoverEvents(); // Add event listeners on mount
+    return () => {
+      // Clean up: Remove event listeners on unmount
+      const phoneLink = document.getElementById("phone-button");
+      if (phoneLink) {
+        phoneLink.removeEventListener("mouseover", () => setPhoneHovered(true));
+        phoneLink.removeEventListener("mouseout", () => setPhoneHovered(false));
+      }
+    };
+  });
+
+  const [journalHovered, setJouralHovered] = useState(false);
+  useEffect(() => {
+    const handleDivHoverEvents = () => {
+      const journal = document.getElementById("journal-div");
       if (journal) {
-        journal.removeEventListener("mouseover", () => setDivHovered(true));
-        journal.removeEventListener("mouseout", () => setDivHovered(false));
+        journal.addEventListener("mouseover", () => setJouralHovered(true));
+        journal.addEventListener("mouseout", () => setJouralHovered(false));
+      }
+    };
+
+    handleDivHoverEvents(); // Add event listeners on mount
+    return () => {
+      // Clean up: Remove event listeners on unmount
+      const journal = document.getElementById("journal-div");
+      if (journal) {
+        journal.removeEventListener("mouseover", () => setJouralHovered(true));
+        journal.removeEventListener("mouseout", () => setJouralHovered(false));
+      }
+    };
+  });
+
+  const [bigButtonHovered, setBigButtonHovered] = useState(false);
+  useEffect(() => {
+    const handleDivHoverEvents = () => {
+      const bigButton = document.getElementById("big-button");
+      if (bigButton) {
+        bigButton.addEventListener("mouseover", () => setBigButtonHovered(true));
+        bigButton.addEventListener("mouseout", () => setBigButtonHovered(false));
+      }
+    };
+
+    handleDivHoverEvents(); // Add event listeners on mount
+    return () => {
+      // Clean up: Remove event listeners on unmount
+      const bigButton = document.getElementById("big-button");
+      if (bigButton) {
+        bigButton.removeEventListener("mouseover", () => setBigButtonHovered(true));
+        bigButton.removeEventListener("mouseout", () => setBigButtonHovered(false));
       }
     };
   });
 
   const cursorClasses = `cursor ${clicked ? "cursor--clicked" : ""} ${
     hidden ? "cursor--hidden" : ""
-  } ${linkHovered ? "cursor--link-hovered" : ""} ${divHovered ? "cursor--journal-hovered" : ""}`;
+  } ${linkHovered ? "cursor--link-hovered" : ""} ${socialHovered ? "cursor--social-hovered" : ""} ${
+    emailHovered ? "cursor--email-hovered" : ""
+  } ${phoneHovered ? "cursor--phone-hovered" : ""} ${
+    journalHovered ? "cursor--journal-hovered" : ""
+  } ${bigButtonHovered ? "cursor--big-button-hovered" : ""}`;
 
   return (
     <div className={cursorClasses} style={{ left: `${position.x}px`, top: `${position.y}px` }} />

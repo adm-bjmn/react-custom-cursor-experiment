@@ -17,9 +17,6 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
 }
 
 html *,
@@ -31,7 +28,7 @@ body * {
   .cursor {
     width: 40px;
     height: 40px;
-    border: 2px solid #fefefe;
+    border: 2px solid #e56aa5;
     border-radius: 100%;
     position: fixed;
     transform: translate(-50%, -50%);
@@ -52,22 +49,69 @@ body * {
     /* background-color: rgba(229, 106, 165, 1); */
     transform: translate(-50%, -50%) scale(1.5);
     z-index: 9999;
-    background-image: url("/Destination-Gym-Brand-Logo-Icon.svg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 30px 30px;
+    background-size: 40px 40px;
+  }
+
+  .cursor--social-hovered {
+    transform: translate(-50%, -50%) scale(1.5);
+    border: 1px solid #fff;
+    /* background-color: rgba(229, 106, 165, 1); */
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 9999;
+    background-image: url("/Social_Media.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #e56aa5;
+    background-size: 40px 40px;
+  }
+
+  .cursor--email-hovered {
+    transform: translate(-50%, -50%) scale(1.5);
+    border: 1px solid #fff;
+    /* background-color: rgba(229, 106, 165, 1); */
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 9999;
+    background-image: url("/email.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #e56aa5;
+    background-size: 40px 40px;
+  }
+
+  .cursor--phone-hovered {
+    transform: translate(-50%, -50%) scale(1.5);
+    border: 1px solid #fff;
+    /* background-color: rgba(229, 106, 165, 1); */
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 9999;
+    background-image: url("/Phone_call.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #e56aa5;
+    background-size: 40px 40px;
   }
 
   .cursor--journal-hovered {
     transform: translate(-50%, -50%) scale(1.5);
-    border: 2px solid #e56aa5;
+    border: 1px solid #fff;
     /* background-color: rgba(229, 106, 165, 1); */
     transform: translate(-50%, -50%) scale(1.5);
     z-index: 9999;
-    background-image: url("/Destination-Gym-Brand-Logo-Icon.svg");
+    background-image: url("/Journal.gif");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 30px 30px;
+    background-color: #e56aa5;
+    background-size: 40px 40px;
+  }
+  .cursor--big-button-hovered {
+    transform: translate(-50%, -50%) scale(1.5);
+    border: 2px solid #fbae42;
+    /* background-color: rgba(229, 106, 165, 1); */
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 9999;
+    background-size: 40px 40px;
   }
 
   .cursor--clicked {
